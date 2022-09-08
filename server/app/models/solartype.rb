@@ -1,4 +1,4 @@
 class Solartype < ActiveRecord::Base
-    belongs_to :technician
-    belongs_to :customer
+    belongs_to :technicians
+    belongs_to :customers
 end
