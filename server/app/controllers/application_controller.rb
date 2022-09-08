@@ -58,37 +58,37 @@ class ApplicationController < Sinatra::Base
 
   get '/technicians' do
     all_technicians = Technician.all
-    all_technicians.to_json(only: [:id, :first_name, :last_name, :email, :phone, :town, :job_type, :job_description])
+    all_technicians.to_json(only: [:id, :first_name, :last_name, :email, :phone, :town, :job_type, :job_description, :labour_cost])
   end
 
   get '/solartypes' do
     all_solartypes = Solartype.all
-    all_solartypes.to_json(only: [:id, :type_name, :type_description])
+    all_solartypes.to_json(only: [:id, :type_name, :type_description, :type_price])
   end
 
   #Get for one
   get '/customers/:id' do
     single_customer = Customer.find(params[:id])
     single_customer.to_json(only: [:id, :first_name, :last_name, :email, :phone, :address, :town, :appointment_date], include: {
-      solartype: { only: [:type_name]}
+      solartype: { only: [:type_name, :type_price]}
     })
   end
 
   get '/technicians/:id' do
     single_technician = Technician.find(params[:id])
-    single_technician.to_json(only: [:id, :first_name, :last_name, :email, :phone, :town],
-      include: {customers: {only: [:first_name, :last_name, :address, :town, :appointment_date], include: {solartype: {only: [:type_name]}}}}
+    single_technician.to_json(only: [:id, :first_name, :last_name, :email, :phone, :town, :labour_cost],
+      include: {customers: {only: [:first_name, :last_name, :address, :town, :appointment_date], include: {solartype: {only: [:type_name,:type_price ]}}}}
     )
   end
 
   get '/solartypes/:id' do
     single_solartype = Solartype.find(params[:id])
-    single_solartype.to_json(only: [:id, :type_name, :type_description], include: { customers: {only: [:first_name, :last_name]}})
+    single_solartype.to_json(only: [:id, :type_name, :type_description, :type_price], include: { customers: {only: [:first_name, :last_name]}})
   end
 
   get '/solartypes/edit/:id' do
     single_solartype = Solartype.find(params[:id])
-    single_solartype.to_json(only: [:id, :type_name, :type_description], include: {customers: {only: [:first_name, :last_name]}})
+    single_solartype.to_json(only: [:id, :type_name, :type_description, :type_price], include: {customers: {only: [:first_name, :last_name]}})
   end
 
 
@@ -114,7 +114,8 @@ class ApplicationController < Sinatra::Base
   post '/solartypes' do
     send_it = Solartype.create(
       type_name: params[:type_name],
-      type_description: params[:type_description]
+      type_description: params[:type_description],
+      type_price: params[:type_price]
     )
     send_it.to_json
   end
@@ -127,7 +128,8 @@ class ApplicationController < Sinatra::Base
       phone: params[:phone],
       town: params[:town],
       job_type: params[:job_type],
-      job_description: params[:job_description]
+      job_description: params[:job_description],
+      labour_cost: params[:labour_cost]
     )
     send_it.to_json
   end
@@ -156,7 +158,8 @@ class ApplicationController < Sinatra::Base
     fix_it = Solartype.find(params[:id])
     fix_it.update(
       type_name: params[:type_name],
-      type_description: params[:type_description]
+      type_description: params[:type_description],
+      type_price: params[:type_price]
     )
   end
 
@@ -169,7 +172,8 @@ class ApplicationController < Sinatra::Base
       phone: params[:phone],
       town: params[:town],
       job_type: params[:job_type],
-      job_description: params[:job_description]
+      job_description: params[:job_description],
+      labour_cost: params[:labour_cost]
     )
     fix_it.to_json
   end
@@ -198,7 +202,8 @@ class ApplicationController < Sinatra::Base
     fix_it = Solartype.find(params[:id])
     fix_it.update(
       type_name: params[:type_name],
-      type_description: params[:type_description]
+      type_description: params[:type_description],
+      type_price: params[:type_price]
     )
   end
 
@@ -211,7 +216,8 @@ class ApplicationController < Sinatra::Base
       phone: params[:phone],
       town: params[:town],
       job_type: params[:job_type],
-      job_description: params[:job_description]
+      job_description: params[:job_description],
+      labour_cost: params[:labour_cost]
     )
     fix_it.to_json
   end
