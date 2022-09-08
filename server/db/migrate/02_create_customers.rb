@@ -12,6 +12,8 @@ class CreateCustomers < ActiveRecord::Migration[6.1]
       t.string :job_type
       t.string :job_description
       t.datetime :appointment_date
+      t.integer :solartype_id
+      t.integer :technician_id
       t.timestamps
     end
 

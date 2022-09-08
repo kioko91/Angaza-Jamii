@@ -9,6 +9,7 @@ class CreateTechnicians < ActiveRecord::Migration[6.1]
       t.string :town
       t.string :job_type
       t.string :job_description
+      t.integer :labour_cost
       t.timestamps
     end
 

@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "job_type"
     t.string "job_description"
     t.datetime "appointment_date"
+    t.integer "solartype_id"
+    t.integer "technician_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -30,6 +32,7 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "solartypes", force: :cascade do |t|
     t.string "type_name"
     t.string "type_description"
+    t.integer "type_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,6 +45,7 @@ ActiveRecord::Schema.define(version: 3) do
     t.string "town"
     t.string "job_type"
     t.string "job_description"
+    t.integer "labour_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
