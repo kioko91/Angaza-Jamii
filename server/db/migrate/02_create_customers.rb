@@ -12,6 +12,7 @@ class CreateCustomers < ActiveRecord::Migration[6.1]
       t.string :job_type
       t.string :job_description
       t.datetime :appointment_date
+      t.timestamps
     end
 
   end
