@@ -2,13 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import 'tw-elements';
 import reportWebVitals from './reportWebVitals';
+// @material-tailwind/react
+import { ThemeProvider } from "@material-tailwind/react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
