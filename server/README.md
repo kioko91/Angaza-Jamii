@@ -1,6 +1,6 @@
 <h1>Angaza Jamii</h1>
 <hr><p>Providing solar technology to the community.</p><h2>General Information</h2>
-<h3> Front-end live link:   </h3>
+<h3> Back-end live link: https://backend-host.herokuapp.com </h3>
 <hr><ul>
 <li>It is a react web application with ruby as its back-end.</li>
 </ul><ul>
