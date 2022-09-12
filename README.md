@@ -22,8 +22,7 @@
 <li>POST, GET</li>
 </ul><h2>Setup</h2>
 <hr><p>Simply clone the front-end and run npm install to install the dependencies.</p>
-<p>For back-end, simply clone and run bundle install to add the dependencies.</p><h2>Project Status</h2>
-<hr><p>In progress</p><h2>Improvements</h2>
+<p>For back-end, simply clone and run bundle install to add the dependencies.</p><h2>Improvements</h2>
 <hr><ul>
 <li>Adding the DELETE feature</li>
 </ul><ul>
