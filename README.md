@@ -1,6 +1,7 @@
 <h1>Angaza Jamii</h1>
+<h2>Author: Calvin Kioko </h2>
 <hr><p>Providing solar technology to the community.</p><h2>General Information</h2>
-<h3> Front-end live link: https://631aecf2d66a3a7f928dc6d2--effervescent-twilight-1d7e68.netlify.app/home Back-end live link : https://backend-host.herokuapp.com/  </h3>
+<h3> Front-end live link: https://631aecf2d66a3a7f928dc6d2--effervescent-twilight-1d7e68.netlify.app Back-end live link : https://backend-host.herokuapp.com/  </h3>
 <hr><ul>
 <li>It is a react web application with ruby as its back-end.</li>
 </ul><ul>
